@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>h3 th:text="${wizard.id} ? 'Edit Wizard' : 'Create Wizard'">Wizard</h3>
+<form method="post" th:action="@{/person}" th:object="${person}">
+    <input name="id" th:field="*{id}" type="hidden">
+    <label for="person-first-name">First name:</label>
+    <input id="person-first-name" name="firstName" placeholder="Harry" required th:field="*{firstName}" type="text">
+    <br><br>
+    <label for="person-last-name">Last name:</label>
+    <input id="person-last-name" name="lastName" placeholder="Potter" required th:field="*{lastName}" type="text">
+    <br><br>
+    <label for="person-age">age:</label>
+    <input id="person-age" name="birthday" placeholder="1980-07-31" required th:field="*{age}" type="date">
+    <br><br>
+    <input type="submit" value="Send">
+</form>
+<br>
+<a href="/person">Browse all persons</a>
+</body>
+</html>
